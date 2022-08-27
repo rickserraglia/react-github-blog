@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import ReactMarkdown from 'react-markdown';
 
 import { IssueItem } from '../..';
 import { CardArticle } from './styles';
@@ -21,7 +22,9 @@ export const Card = ({
 					})}
 				</span>
 			</header>
-			<p>{body}</p>
+			<p>
+				<ReactMarkdown>{body}</ReactMarkdown>
+			</p>
 		</CardArticle>
 	);
 };
