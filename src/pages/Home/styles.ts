@@ -30,6 +30,7 @@ export const UserProfileContainer = styled.div`
 	}
 
 	> div {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
@@ -117,16 +118,43 @@ export const SearchFormContainer = styled.form`
 			color: ${(props) => props.theme.span};
 		}
 	}
-	input {
+	> div {
 		width: 100%;
-		color: ${(props) => props.theme.text};
-		background: ${(props) => props.theme.input};
-		border: 1px solid ${(props) => props.theme.border};
-		border-radius: 6px;
-		padding: 1.2rem 1.6rem;
+		display: flex;
+		position: relative;
 
-		::placeholder {
-			color: ${(props) => props.theme.label};
+		input {
+			width: 100%;
+			color: ${(props) => props.theme.text};
+			background: ${(props) => props.theme.input};
+			border: 1px solid ${(props) => props.theme.border};
+			border-radius: 6px;
+			padding: 1.2rem 1.6rem;
+
+			&:disabled {
+				background: ${(props) => props.theme.border};
+				cursor: not-allowed;
+			}
+
+			::placeholder {
+				color: ${(props) => props.theme.label};
+			}
+		}
+		button {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			margin: 5px;
+			padding: 1rem 2rem;
+			border: none;
+			border-radius: 6px;
+			background: ${(props) => props.theme.blue};
+			cursor: pointer;
+
+			&:disabled {
+				cursor: not-allowed;
+			}
 		}
 	}
 `;

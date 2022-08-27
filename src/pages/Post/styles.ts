@@ -1,3 +1,4 @@
+import reactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
 export const PostContainer = styled.article`
@@ -77,9 +78,15 @@ export const PostTitleContainer = styled.header`
 	}
 `;
 
-export const PostBodyContainer = styled.main`
+export const PostBodyContainer = styled(reactMarkdown)`
 	padding: 4rem 3.2rem;
 	display: flex;
 	flex-direction: column;
 	gap: 2.4rem;
+
+	pre {
+		padding: 1.6rem;
+		border-radius: 2px;
+		background: ${(props) => props.theme.post};
+	}
 `;
